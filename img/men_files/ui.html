@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<!-- saved from url=(0042)https://social.gplex.net/gPlexAIChatBot/ui -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>gPlex AI - Transform your Business with AI</title>
+    <!--<base href="https://social.gplex.net/gPlexAIChatBot/">--><base href=".">
+    <meta name="csrf-token" content="4G2nn8ZTtUegFv0YLyJbOrWy7wtBOUj8M6YkMUNZ">
+    <!--====== Favicon Icon ======-->
+    <link rel="shortcut icon" href="https://social.gplex.net/gPlexAIChatBot/favicon.png" type="image/x-icon">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta name="keywords" content="gPlex AI, AI Call center solutions, AT Voicebot solution, AI Chatbot solution, AI Cloud call center, Call center service,Smart IVR solutions, gPlex AI, gPlex Contact center, Contact center, AI Call center solution in Bangladesh, AI Contact Ceneter Solution, Voice analytics, AI Solutions, AI Voicebot, AI Chatbot, Voice Banking solution, Phonetic Recognition ">
+    <meta name="description" content="gPlex AI help companies move into the AI and machine learning-powered age with tailor-made solutions. Our team focuses on building AI solutions that can generate exponential value.">
+    <meta name="author" content="Genusys Inc.">
+
+
+    <!--    Stylesheet For DISHA-->
+    <!--Import Google Icon Font-->
+    <link href="./material-icons.css" rel="stylesheet">
+
+    <!--Import Font Awesome Icon Font-->
+    <link rel="stylesheet" href="./font-awesome.min.css">
+
+    <!--Import materialize.css-->
+    <link rel="stylesheet" type="text/css" href="./materialize.min.css">
+
+    <!-- Import intlTelInput.css -->
+    <link rel="stylesheet" href="./intlTelInput.css">
+
+    <!--Main css-->
+    <link rel="stylesheet" type="text/css" href="./app.css">
+    <!--    Stylesheet For DISHA-->
+
+        <style>
+        /* Style the error message to appear below the intl-tel-input container */
+        .intl-tel-input-wrapper.is-invalid + .invalid-feedback {
+            display: block;
+        }
+
+        /* Optional: Add red border to the plugin's container when invalid */
+        .intl-tel-input-wrapper.is-invalid .iti {
+            border: 1px solid #dc3545;
+            border-radius: 4px;
+        }
+    </style>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            document.body.appendChild(Object.assign(document.createElement('script'), {
+                src: 'public/scripts/sdk/server.min.js?v=' + Date.now(),
+                async: true
+            }));
+        });
+    </script>
+</head>
+<body>
+
+<!--Disha Chat Bot-->
+<div class="g-disha-container">
+    <!-- Modal for rendering the charts, declare this if you want to render charts,
+       else you remove the modal -->
+    <div id="modal1" class="modal">
+        <canvas id="modal-chart"></canvas>
+    </div>
+
+    <!--chatbot widget -->
+    <div class="widget">
+        <div class="chat_header">
+
+            <!--Add the name of the bot here -->
+            <span class="chat_header_title"> <img width="35" src="./disha.svg" alt=""></span>
+
+
+            <div class="g-right-close-area">
+                <!--Fixme: A dropdown trigger kept off for web chat
+                             <span class="dropdown-trigger" href="#" data-target="dropdown1">
+                              <i class="material-icons"> more_vert </i>
+                            </span>-->
+
+                <!--Fixme: Dropdown menu-->
+                <!--<ul id="dropdown1" class="dropdown-content">
+                    <li><a href="#" id="clear">Clear</a></li>
+                    <li><a href="#" id="restart">Restart</a></li>
+                </ul>-->
+
+                <div>
+                    <span id="close">
+                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#ffffff" class="bi bi-x" viewBox="0 0 16 16">
+                          <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"></path>
+                        </svg>
+                    </span>
+
+                    
+                </div>
+            </div>
+
+        </div>
+
+            <!--Chatbot contents goes here -->
+    <div class="chats" id="chats">
+        <div class="chats-overlay" id="gs-chats-overlay"></div>
+        <div class="clearfix"></div>
+
+        <!-- User Form - initially hidden -->
+        <div id="userForm" class="c-log-card">
+            <h3>Welcome to Apex Online Service!</h3>
+
+            <form id="form" class="mx-auto" method="post" action="https://social.gplex.net/gPlexAIChatBot/ui">
+                <input type="hidden" name="_token" value="4G2nn8ZTtUegFv0YLyJbOrWy7wtBOUj8M6YkMUNZ">                <input type="hidden" name="_controller" value="Auth\LoginController">
+                <input type="hidden" name="_action" value="login">
+                <div class="mb-5">
+                    <label for="name" class="c-form-label active">Name</label>
+                    <input type="text" name="name" id="name" class="c-form-control " placeholder="Name" value="" required="">
+                                    </div>
+
+                <div class="mb-5">
+                    <label for="phone" class="c-form-label">Phone Number</label>
+
+                        <div class="iti iti--allow-dropdown iti--show-flags"><div class="iti__country-container" style="left: 0px;"><button type="button" class="iti__selected-country" aria-expanded="false" aria-label="Selected country" aria-haspopup="true" aria-controls="iti-0__dropdown-content" role="combobox" title="Bangladesh: +880"><div class="iti__selected-country-primary"><div class="iti__flag iti__bd"><span class="iti__a11y-text">Bangladesh +880</span></div><div class="iti__arrow" aria-hidden="true"></div></div></button></div><input type="tel" id="phone" name="phone" class="c-form-control iti__tel-input" value="" required="" autocomplete="off" placeholder="01812-345678" data-intl-tel-input-id="0" style="padding-left: 48px;"></div>
+
+                                    </div>
+
+                <div class="g-submit-button-area">
+                    <button id="atStartBtn" type="submit" class="btn btn-danger" style="font-weight: bold">Start
+                        Chat
+                        <span class="g-signin-loader" style="display: none"></span>
+                    </button>
+                </div>
+
+            </form>
+        </div>
+        <!-- End User Form - initially hidden -->
+
+
+    </div>
+
+        <div class="g-powered-by">
+            <a href="https://social.gplex.net/gPlexAIChatBot/"> <small>Powered by</small> <img height="15" class="img-fluid" src="./gplex.svg" alt="gplex"></a>
+        </div>
+
+        
+        <div id="globalLoader" style="position: absolute; z-index: 99999; inset: 0px; width: 100%; height: 100%; justify-content: center; display: none; place-items: center; border-radius: 10px;">
+            <img width="50" src="./global-loader.gif" alt="Loading...">
+        </div>
+        
+    </div>
+
+    <!--bot profile-->
+    <!--    <div class="profile_div" id="profile_div">-->
+    <!--        <img class="imgProfile" src="public/images/disha.svg" alt="gplex ai"/>-->
+    <!--    </div>-->
+
+
+    <!--    New Bot Profile-->
+    <!-- Chat icon and popup -->
+    <div class="chat-container">
+        <!-- Chat Button -->
+        <div class="chat-button" id="chatButton">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M20 2H4C2.9 2 2 2.9 2 4V22L6 18H20C21.1 18 22 17.1 22 16V4C22 2.9 21.1 2 20 2Z" fill="white"></path>
+            </svg>
+        </div>
+
+        <!-- Chat Popup -->
+        <div class="chat-popup" id="chatPopup">
+            <div class="popup-header">
+                <h3>How can we help?</h3>
+                <p>Choose an option below</p>
+
+                <!-- Close Button -->
+                <div class="close-button" id="closeButton">
+                    <svg width="12" height="12" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M11.8334 1.34167L10.6584 0.166672L6.00002 4.82501L1.34169 0.166672L0.166687 1.34167L4.82502 6L0.166687 10.6583L1.34169 11.8333L6.00002 7.17501L10.6584 11.8333L11.8334 10.6583L7.17502 6L11.8334 1.34167Z"></path>
+                    </svg>
+                </div>
+            </div>
+
+            <div class="buttons-container">
+                <!-- Facebook Media -->
+                <!--                <a href="https://www.facebook.com/104978636019545" class="popup-button" target="_blank">-->
+                <!--                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"-->
+                <!--                         viewBox="0 0 16 16">-->
+                <!--                        <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951"/>-->
+                <!--                    </svg>-->
+                <!--                    <span>Facebook</span>-->
+                <!--                </a>-->
+                <!-- Messenger Media -->
+                <a href="https://m.me/1596865273932452" class="popup-button" target="_blank">
+                    <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+                        <!-- Generator: Adobe Illustrator 29.0.0, SVG Export Plug-In . SVG Version: 2.1.0 Build 186)  -->
+                        <defs>
+                            <style>
+                                .stm0 {
+                                    fill: #0766fe;
+                                }
+                            </style>
+                        </defs>
+                        <path class="stm0" d="M48.5.8c23-.7,43.7,15.4,48.3,37.9,7.4,35.9-26.1,66.4-61,55.6-4,1.3-8.3,3.6-12.4,4.6-9.1,2.3-6.3-11-6.7-16C-13.5,53.8,6.4,2,48.5.8ZM75.1,34c-.5,0-.9.3-1.3.6l-16.2,11.5c-5.6-2.7-10.6-6.5-16.3-8.8-2.2-.3-3.5.5-4.9,2-4.9,5.5-9,12.8-13.8,18.5-1.5,2.4.3,4.9,3,4l14.3-9.4c5.6,2.6,10.6,6.5,16.3,8.8,1.7.2,3.4-.4,4.6-1.5l17.1-22c.8-1.9-.6-4.1-2.8-3.7Z"></path>
+                    </svg>
+                    <span>Messenger</span>
+                </a>
+
+                <!-- Whatsapp Media -->
+                <a href="https://wa.me/8801322925065" class="popup-button" target="_blank">
+                    <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+                        <!-- Generator: Adobe Illustrator 29.0.0, SVG Export Plug-In . SVG Version: 2.1.0 Build 186)  -->
+                        <defs>
+                            <style>
+                                .stw0 {
+                                    fill: #2aa71b;
+                                }
+
+                                .stw1 {
+                                    fill: #29a71a;
+                                }
+                            </style>
+                        </defs>
+                        <path class="stw1" d="M84.6,15.5C55.5-13.9,4.7,4.8,1.3,45.8c-.2,2.6.2,5.5,0,8.2.5,2.3.7,4.6,1.2,6.9,4.2,18.8,19.7,33.5,38.6,37.1,1.7.3,3.5.4,5.2.8h7.6c41.1-3,60-53.9,30.8-83.3ZM78.5,60.1c-6,17-25.9,24.7-42.1,16.8l-14.9,3.6c-1.5.3-1.7-.7-1.5-1.9.5-4.7,2.5-10,3-14.9-9.6-19.3,3.3-42.6,24.9-44.1,21.9-1.5,37.9,19.8,30.6,40.5Z"></path>
+                        <path class="stw0" d="M72.6,42.4c-2.7-8.4-11-15.5-20-16.2-20.1-1.6-32.8,19.1-22.6,36.4l-1.9,9.4c.3.3,7.2-1.7,8.3-1.9,1.7-.2,4.1,1.5,5.9,2.1,18.6,6.3,36.2-11,30.3-29.7ZM60.9,64.1c-4.1,1.2-8.7-.6-12.2-2.7-6.4-3.9-17.9-15.2-12.4-23.3.6-.9,2.4-2.9,3.5-3,.7-.1,1.6.2,2,.7.4.4,2.8,5.8,2.9,6.4.5,2.6-2.9,3.1-1.8,5.9.8,2,8.2,8.6,10.2,9,2.9.6,3-3,5.8-2.6.9.1,5.8,1.6,6.4,2,3.1,2-2.1,6.9-4.4,7.6Z"></path>
+                    </svg>
+                    <span>Whatsapp</span>
+                </a>
+
+
+                <!-- Instagram Media -->
+                <a href="https://ig.me/m/apex_footwear" class="popup-button" target="_blank">
+                    <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+                        <!-- Generator: Adobe Illustrator 29.0.0, SVG Export Plug-In . SVG Version: 2.1.0 Build 186)  -->
+                        <defs>
+                            <style>
+                                .sti0 {
+                                    fill: #fff;
+                                }
+
+                                .sti1 {
+                                    fill: url(#linear-gradient);
+                                }
+                            </style>
+                            <lineargradient id="linear-gradient" x1="15" y1="17.8" x2="85.1" y2="82.3" gradientUnits="userSpaceOnUse">
+                                <stop offset="0" stop-color="#fae11b"></stop>
+                                <stop offset=".5" stop-color="#ed328d"></stop>
+                                <stop offset="1" stop-color="#711cce"></stop>
+                            </lineargradient>
+                        </defs>
+                        <circle class="sti1" cx="50" cy="50" r="48.9"></circle>
+                        <g>
+                            <path class="sti0" d="M61.5,24.1h-22.9c-8,0-14.4,6.5-14.4,14.4v22.9c0,8,6.5,14.4,14.4,14.4h22.9c8,0,14.4-6.5,14.4-14.4v-22.9c0-8-6.5-14.4-14.4-14.4ZM71.2,61.3c0,5.5-4.4,9.9-9.9,9.9h-22.6c-5.5,0-9.9-4.4-9.9-9.9v-22.6c0-5.5,4.4-9.9,9.9-9.9h22.6c5.5,0,9.9,4.4,9.9,9.9v22.6Z"></path>
+                            <path class="sti0" d="M50.1,36.7c-7.2,0-13.1,5.9-13.1,13.3s5.9,13.3,13.1,13.3,13.1-5.9,13.1-13.3-5.9-13.3-13.1-13.3ZM50.1,58.6c-4.7,0-8.6-3.9-8.6-8.7s3.8-8.7,8.6-8.7,8.6,3.9,8.6,8.7-3.8,8.7-8.6,8.7Z"></path>
+                            <circle class="sti0" cx="64.1" cy="35.9" r="3.3"></circle>
+                        </g>
+                    </svg>
+                    <span>Instagram</span>
+                </a>
+
+
+                <!-- Chat Interface Button -->
+                <button class="popup-button chat-interface-button" id="profile_div">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M20 2H4C2.9 2 2 2.9 2 4V22L6 18H20C21.1 18 22 17.1 22 16V4C22 2.9 21.1 2 20 2ZM20 16H5.17L4 17.17V4H20V16Z" fill="white"></path>
+                        <path d="M7 9H17V11H7V9Z" fill="white"></path>
+                        <path d="M7 12H14V14H7V12Z" fill="white"></path>
+                        <path d="M7 6H17V8H7V6Z" fill="white"></path>
+                    </svg>
+                    <span>Apex4u Assistance</span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <!--    End New Bot Profile-->
+
+    <!-- Bot pop-up intro -->
+    <div class="tap-target" data-target="profile_div">
+        <div class="tap-target-content">
+            <h5 class="white-text">Hey there 👋</h5>
+            <p class="white-text">
+                I can help you get started with gPlex AI and answer your technical
+                questions.
+            </p>
+        </div>
+    </div>
+</div>
+<!--Disha Chat Bot-->
+
+<!--Script For Disha AI-->
+<script src="./jquery.min.js.download"></script>
+<script type="text/javascript" src="./materialize.min.js.download"></script>
+<script src="./intlTelInputWithUtils.min.js.download"></script>
+<!--Main Script -->
+<script src="./app.min.js.download"></script>
+
+<script>
+    let inactivityTime = 0;
+    //const timeoutPeriod = 30000; // 30 seconds in milliseconds
+    //const timeoutPeriod = 10000; // 10 seconds in milliseconds
+    //const timeoutPeriod = 60000; // 1 minute in milliseconds
+    const timeoutPeriod = 300000; // 5 minutes in milliseconds
+
+    function resetInactivityTimer() {
+        inactivityTime = 0;
+        //console.log(sender + ' is active');
+        //displayTimeRemaining();
+    }
+
+    function displayTimeRemaining() {
+        const timeRemaining = Math.max(0, timeoutPeriod - inactivityTime);
+        const minutes = Math.floor(timeRemaining / 60000);
+        const seconds = Math.floor((timeRemaining % 60000) / 1000);
+
+        console.log(`Time until timeout: ${minutes}m ${seconds}s`);
+    }
+
+    // Set up event listeners
+    function setupInactivityTimer() {
+        // Clear any existing interval to prevent duplicates
+        if (window.inactivityInterval) {
+            clearInterval(window.inactivityInterval);
+        }
+
+        // Reset timer on initial load
+        resetInactivityTimer();
+
+        // Modern event listener approach (better than on* properties)
+        const events = ['mousemove', 'keypress', 'touchstart', 'click'];
+        events.forEach(event => {
+            document.addEventListener(event, resetInactivityTimer);
+        });
+
+        // Check every second
+        window.inactivityInterval = setInterval(function () {
+            inactivityTime += 1000;
+            //displayTimeRemaining();
+
+            if (inactivityTime >= timeoutPeriod) {
+                if (inactivityTime === timeoutPeriod) {  // Use strict equality
+                    $('#close').trigger('click');
+                    // Reset the timer after triggering close
+                    resetInactivityTimer();
+                }
+            }
+        }, 1000);
+    }
+
+    $(window).on('load', function () {
+        $('#globalLoader').fadeOut('slow');
+    });
+
+
+    </script>
+
+    <script>
+        const input = document.querySelector("#phone");
+        const intlTelInput = window.intlTelInput(input, {
+            initialCountry: "bd",
+        });
+
+        $(function () {
+            /*$('#atStartBtn').click(function (e) {
+                e.preventDefault(); // if needed, prevent default click
+
+                $('#phone').val(intlTelInput.getNumber().replace(/\+/g, ""));
+
+                $(this).prop('disabled', true);
+                $('.g-signin-loader').show();
+
+                $('form')[0].submit();
+            });*/
+			
+			$('#atStartBtn').click(function (e) {
+                e.preventDefault(); // Prevent default form submission
+
+                // Build FormData from the form
+                const form = $('form')[0]; // get raw DOM element
+                const formData = new FormData(form);
+
+                // Optional: Modify values before sending
+                const intlNumber = intlTelInput.getNumber().replace(/\+/g, "");
+                formData.set('phone', intlNumber); // set updated phone value
+
+                // UI: Loading state
+                $(this).prop('disabled', true);
+                $('.g-signin-loader').show();
+
+                $.ajax({
+                    url: form.action,
+                    type: 'POST',
+                    data: formData,
+                    processData: false, // Required for FormData
+                    contentType: false, // Required for FormData
+                    success: function (response) {
+                        //console.log(response)
+                        if(response.success && response.redirectTo && response.accessToken){
+                            //console.log(response)
+                            window.parent.postMessage({
+                                _app: 'gPlexAIChatBot',
+                                type: 'loginSuccessful',
+                                accessToken: response.accessToken,
+                                redirectTo: response.redirectTo
+                            }, '*'); // OR specify allowed origin
+                            //window.location.href = response.redirectTo;
+                        }
+                    },
+                    error: function (error) {
+                        $('.invalid-feedback').remove();
+                        $('.is-invalid').removeClass('is-invalid');
+
+                        //console.error('Error:', error);
+
+                        switch (error.status){
+                            case 422:
+                                if (error.responseJSON && error.responseJSON.errors) {
+                                    const errors = error.responseJSON.errors;
+
+                                    // Loop through each validation error
+                                    Object.keys(errors).forEach(function (field) {
+                                        const input = $(`[name="${field}"]`);
+                                        input.addClass('is-invalid'); // Bootstrap invalid class
+
+                                        // Build the error HTML
+                                        const messages = errors[field].map(msg => `<li>${msg}</li>`).join('');
+                                        const feedbackHtml = `
+                        <div class="invalid-feedback">
+                            <ul class="mb-0">${messages}</ul>
+                        </div>
+                    `;
+
+                                        if (input.closest('.iti').length > 0) {
+                                            input.closest('.iti').after(feedbackHtml);
+                                        } else {
+                                            input.after(feedbackHtml);
+                                        }
+                                    });
+                                }
+                                break;
+                        }
+                    },
+                    complete: function () {
+                        $('.g-signin-loader').hide();
+                        $('#atStartBtn').prop('disabled', false);
+                    }
+                });
+            });
+
+            $('#close').click(function () {
+                $(".profile_div").toggle();
+                $(".widget").toggle();
+
+                window.parent.postMessage({
+                    _app: 'gPlexAIChatBot',
+                    type: 'closeFromLoginPage',
+                }, '*');
+            });
+
+            $('#phone').on('input keydown keyup paste change', function (e) {
+                // Handle different events
+                if (e.type === 'paste') {
+                    // Handle paste event
+                    var clipboardData = e.originalEvent.clipboardData || window.clipboardData;
+                    var pastedData = clipboardData.getData('text');
+                    if (!/^\d*$/.test(pastedData)) {
+                        e.preventDefault();
+                        return false;
+                    }
+                } else if (e.type === 'keydown') {
+                    // Allow: backspace, delete, tab, escape, enter
+                    if ($.inArray(e.keyCode, [46, 8, 9, 27, 13]) !== -1 ||
+                        // Allow: Ctrl+A, Ctrl+C, Ctrl+V, Ctrl+X
+                        (e.keyCode == 65 && e.ctrlKey === true) ||
+                        (e.keyCode == 67 && e.ctrlKey === true) ||
+                        (e.keyCode == 86 && e.ctrlKey === true) ||
+                        (e.keyCode == 88 && e.ctrlKey === true) ||
+                        // Allow: home, end, left, right
+                        (e.keyCode >= 35 && e.keyCode <= 39)) {
+                        return;
+                    }
+                    // Ensure it's a number
+                    if ((e.shiftKey || (e.keyCode < 48 || e.keyCode > 57)) &&
+                        (e.keyCode < 96 || e.keyCode > 105)) {
+                        e.preventDefault();
+                    }
+                } else {
+                    // Handle input, keyup, change events
+                    this.value = this.value.replace(/[^0-9]/g, '');
+                }
+            });
+
+// Prevent drag and drop of non-numeric content
+            $('#phone').on('drop', function (e) {
+                e.preventDefault();
+                var data = e.originalEvent.dataTransfer.getData('text');
+                if (/^\d*$/.test(data)) {
+                    this.value = data;
+                }
+            });
+
+                    });
+    </script>
+
+<!--End Script For Disha AI-->
+
+
+<script src="./server.min.js.download" async=""></script></body></html>

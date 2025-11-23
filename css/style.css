@@ -1,0 +1,201 @@
+.banner-section {
+    margin-top: 70px; 
+}
+
+.banner-img {
+    height: 85vh;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+/* Dots design */
+.carousel-indicators button {
+    background-color: #fff;   
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+}
+
+.carousel-indicators .active {
+    background-color: #0d6efd; 
+}
+/* White arrow controls */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    filter: brightness(0) invert(1);
+}
+
+/* ---- Banner Gallery Section ---- */
+.banner-gallery {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 20px; 
+}
+
+/* each banner box */
+.banner-box img {
+    width: 100%;
+    height: 250px;     
+    object-fit: cover;  
+    border-radius: 12px;
+    transition: 0.3s ease;
+}
+
+/* ---- Collection Section ---- */
+.collection-section {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Desktop = 4 items */
+    gap: 15px; 
+    padding: 20px;
+}
+
+/* each banner box */
+.collection-item img {
+    width: 100%;
+    height: 180px;     
+    object-fit: cover; 
+    border-radius: 10px;
+    transition: 0.3s ease-in-out;
+}
+
+/* Hover effect */
+.collection-item img:hover {
+    transform: scale(1.04);
+}
+ /* Collection Section */
+.collection-section {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 15px;
+    padding: 20px;
+}
+
+.collection-item {
+    width: 100%;
+    height: 180px; 
+    overflow: hidden;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+}
+
+.collection-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;  
+    display: block;
+}
+/*add section*/
+.add-section {
+    display: grid;
+    grid-template-columns: 1fr; 
+    gap: 15px; 
+    padding: 20px;
+}
+
+.add-item {
+    width: 100%;
+    height: 220px; 
+    overflow: hidden;
+    border-radius: 12px;
+}
+
+.add-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    border-radius: 12px;
+}
+
+/* bast seller section*/
+.product-card {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.product-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+
+.product-info {
+  margin-top: 8px;
+}
+
+.product-name {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.product-price {
+  font-size: 0.85rem;
+  color: #ff4d4f;
+  font-weight: bold;
+  margin: 0;
+}
+
+/* from */
+.form-section {
+    padding: 30px;
+    display: flex;
+    justify-content: center;
+}
+
+.form-box {
+    width: 100%;
+    max-width: 480px;
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 12px;
+    border: 1px solid #ddd;
+}
+
+.form-box h3 {
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.form-box input,
+.form-box textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+
+.form-box button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    background: #0d6efd;
+    color: #fff;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.form-box button:hover {
+    background: #084bb5;
+}
+
+
+/*FOOTER SECTION*/
+.footer-section {
+background-color: black;
+
+}
+
+.list-unstyled a {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+
+}
+.footer-title{
+    color: rgb(255, 255, 255);
+}
+
